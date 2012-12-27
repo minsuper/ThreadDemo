@@ -7,7 +7,7 @@ public class CommonStorage {
 		return n;
 	}
 	
-	void increaseN() {
-		n++;
+	synchronized void increaseN() {
+		n += 10;
 	}
 }

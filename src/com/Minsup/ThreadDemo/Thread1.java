@@ -12,13 +12,13 @@ public class Thread1 extends Thread {
 		int i;
 		
 		try {
-			for(i=0; i<10; i++) {
-				sleep(1000);
+			for(i=0; i<10000; i++) {
+				//sleep(1);
 				System.out.println(this.getName() + " : " + CS.getData());
 				CS.increaseN();
 			}
 		}
-		catch (InterruptedException ex) {
+		catch (Exception ex) {
 			ex.printStackTrace();
 		}
 	}
