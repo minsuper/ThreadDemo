@@ -19,6 +19,30 @@ public class ThreadDemo {
 		catch (Exception e) {
 			e.printStackTrace();
 		}
+		try {
+			t1.join();
+			t2.join();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		X x = new X();
+		Thread2 t[] = new Thread2[10];
+		for(int i=0; i<10; i++) {
+			t[i] = new Thread2(x);
+			t[i].start();
+		}
+		for(int i=0; i<10; i++) {
+			try {
+				t[i].join();
+			}
+			catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		System.out.println("Done");
+		
 	}
 
 }
